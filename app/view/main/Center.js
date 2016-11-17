@@ -161,7 +161,49 @@ Ext.define('VistA.Surgery.view.main.Center', {
 			xtype: "tabpanel",
 			frame: true,
 			items: [
-				{ title: "Waiting List"},
+				{ 
+					title: "Waiting List",
+					items: [
+						{
+							border: 0,
+							html: 
+			"<div style=\"margin: 10px 0 10px 10px;\">" +
+			"Helpful information goes here. The grid can be set to display information in any order desired dynamically"+
+			"</div>"								
+						},
+						{
+							xtype : "grid",
+							// id: "ScheduleActionOperations",
+							title : "Availability",
+							margin: 15,
+							height : 600,
+							columns : [{
+								text : "First Name",
+								dataIndex : "firstName",
+								flex : 1
+							}, {
+								text : "Last Name",
+								dataIndex : "lastName",
+								flex : 3
+							}, {
+								text : "Office",
+								dataIndex : "officeLocation",
+								flex : 3
+							},
+							{
+								text : "Phone",
+								dataIndex : "phoneNumber",
+								flex : 3
+							}],
+							store: userStore
+
+
+							// {
+							// 	type: "operations"
+							// }
+						}
+					]
+				},
 				{ title: "Operation Requests"},
 				{ title: "Scheduled Operations"}
 			]
@@ -224,46 +266,11 @@ Ext.define('VistA.Surgery.view.main.Center', {
 						{ title: "Display Availability",
 							layout: "fit",
 							align: "stretch",
-
 							items: [
-								{
-									border: 0,
-									html: 
-					"<div style=\"margin: 10px 0 10px 10px;\">" +
-					"Helpful information goes here. The grid can be set to display information in any order desired dynamically"+
-					"</div>"								
-								},
-								{
-									xtype : "grid",
-									// id: "ScheduleActionOperations",
-									title : "Availability",
-									margin: 15,
-									height : 600,
-									columns : [{
-										text : "First Name",
-										dataIndex : "firstName",
-										flex : 1
-									}, {
-										text : "Last Name",
-										dataIndex : "lastName",
-										flex : 3
-									}, {
-										text : "Office",
-										dataIndex : "officeLocation",
-										flex : 3
-									},
-									{
-										text : "Phone",
-										dataIndex : "phoneNumber",
-										flex : 3
-									}],
-									store: userStore
-
-
-									// {
-									// 	type: "operations"
-									// }
-								}
+							{
+								height: 600,
+								html: "Temporary place holder<br><img src=\"./Calendar.png\">"
+							}
 							]
 						},
 						// { title: "Make Operation Requests"},

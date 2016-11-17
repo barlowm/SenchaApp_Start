@@ -24,7 +24,7 @@ Ext.define('VistA.Surgery.view.main.Main', {
 	items: [
 		{
 			xtype: "app-header",
-			region: "north",
+			region: "north"
 		},
 		{
 			xtype: "app-information",
