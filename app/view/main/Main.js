@@ -9,52 +9,49 @@ Ext.define('VistA.Surgery.view.main.Main', {
 	extend: 'Ext.Panel',
 	xtype: 'app-main',
 
+    requires: [
+        'Ext.layout.container.Border'
+    ],	
+
 	layout: "border",
 	bodyBorder: false,
 	defaults: {
 		collapsible: false,
 		split: true,
-		bodyPadding: 15,
-		margin: '0'
+		bodyPadding: 10,
+		frame: true
 	},
 	items: [
 		{
-			title: 'Header',
-			id: "SurgeryHeaderPanel",
-			region: 'north',
-			collapsed: true,
-			margin: '0 0 5 0',
-			hideCollapseTool : true,
-			title: "<abbr title=\"Veterans Health Information Systems & Technology Architecture\">VistA</abbr> Surgery"		
+			xtype: "app-header",
+			region: "north",
 		},
 		{
-			title: 'west',
-			id: "SurgeryInfoPanel",
-			region: 'west',
-			width: "20%",
-			margin: '0 5px 5px 10px',
-			bodyPadding: 10,
-
-			html: "Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. Here is some text. ",
-			border: true
-		},		
+			xtype: "app-information",
+			region: "west"
+		},
 		{
-			title: 'east',
-			id: "SurgeryMainPanel",
+			xtype: "app-center",
 			region: 'center',
-			width: "80%",
-			margin: '0 10 5 5',
-			bodyPadding: 10,
-			html: "Here is some text",
-			border: true
+			split: true,
+			width: "80%"
 		},
 		{
-			title: 'South Region',
+			title: 'Footer Information Panel',
 			id: "SurgeryFooterPanel",
 			region: 'south',
 			margin: '5 0 0 0',
 			collapsed: true,
-			hideCollapseTool : true
+			hideCollapseTool : true,
+			tools: [
+				{
+					itemId: "refresh",
+					type: "refresh",
+					handler: function () {
+					// do refresh
+					}
+				}
+			]			
 		}
 	]
 });
