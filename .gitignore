@@ -3,3 +3,5 @@
 /.sencha
 /bootstrap.*
 /sass
+build.xml
+!/sass/var/all.scss
